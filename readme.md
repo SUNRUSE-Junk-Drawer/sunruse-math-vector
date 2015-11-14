@@ -3,7 +3,7 @@ A simple, dependency-free JavaScript library for performing vector mathematics w
 # Installation
 
 * NPM/NodeJS
-[Use "npm install sunruse-math-vectors"](https://docs.npmjs.com/cli/install) like any other NPM package.
+[Use "npm install sunruse-math-vector"](https://docs.npmjs.com/cli/install) like any other NPM package.
 Requiring "sunruse-math-vectors" will get you the object described in [Usage](#Usage).
 
 * Browser
