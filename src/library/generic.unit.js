@@ -232,7 +232,7 @@ describe("generic set operations", function(){
 			beforeEach(function(){
 				result = vector.fold("scalar", function(a, b){ return "folded(" + a + ", " + b + ")" })
 			})
-			it("applies the callback to every element and writes them to the output", function(){
+			it("applies the callback to every element and returns the result", function(){
 				expect(result).toEqual("scalar")
 			})
 		})
@@ -245,7 +245,7 @@ describe("generic set operations", function(){
 			it("does not modify the input", function(){
 				expect(input).toEqual(["item a"])
 			})
-			it("applies the callback to every element and writes them to the output", function(){
+			it("applies the callback to every element and returns the result", function(){
 				expect(result).toEqual("item a")
 			})
 		})
@@ -258,7 +258,7 @@ describe("generic set operations", function(){
 			it("does not modify the input", function(){
 				expect(input).toEqual(["item a", "item b", "item c"])
 			})
-			it("applies the callback to every element and writes them to the output", function(){
+			it("applies the callback to every element and returns the result", function(){
 				expect(result).toEqual("folded(folded(item a, item b), item c)")
 			})
 		})
@@ -275,7 +275,7 @@ describe("generic set operations", function(){
 				expect(inputA).toEqual(["item a a", "item a b", "item a c"])
 				expect(inputB).toEqual(["item b a", "item b b", "item b c"])
 			})
-			it("applies the callback to every element and writes them to the output", function(){
+			it("applies the callback to every element and returns the result", function(){
 				expect(result).toEqual("folded(folded(zipped(item a a, item b a), zipped(item a b, item b b)), zipped(item a c, item b c))")
 			})
 		})
@@ -288,7 +288,7 @@ describe("generic set operations", function(){
 			it("does not modify the input", function(){
 				expect(inputB).toEqual(["item b a", "item b b", "item b c"])
 			})
-			it("applies the callback to every element and writes them to the output", function(){
+			it("applies the callback to every element and returns the result", function(){
 				expect(result).toEqual("folded(folded(zipped(item a, item b a), zipped(item a, item b b)), zipped(item a, item b c))")
 			})
 		})
@@ -301,7 +301,7 @@ describe("generic set operations", function(){
 			it("does not modify the input", function(){
 				expect(inputA).toEqual(["item a a", "item a b", "item a c"])
 			})
-			it("applies the callback to every element and writes them to the output", function(){
+			it("applies the callback to every element and returns the result", function(){
 				expect(result).toEqual("folded(folded(zipped(item a a, item b), zipped(item a b, item b)), zipped(item a c, item b))")
 			})
 		})
@@ -310,7 +310,7 @@ describe("generic set operations", function(){
 			beforeEach(function(){
 				result = vector.zipFold("item a", "item b", function(a, b){ return "zipped(" + a + ", " + b + ")" }, function(a, b){ return "folded(" + a + ", " + b + ")" })
 			})
-			it("applies the callback to every element and writes them to the output", function(){
+			it("applies the callback to every element and returns the result", function(){
 				expect(result).toEqual("zipped(item a, item b)")
 			})
 		})

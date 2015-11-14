@@ -6,7 +6,7 @@ describe("calculations", function(){
 			beforeEach(function(){
 				result = vector.sum(5)
 			})
-			it("applies the callback to every element and writes them to the output", function(){
+			it("returns the sum of the elements", function(){
 				expect(result).toEqual(5)
 			})
 		})
@@ -19,7 +19,7 @@ describe("calculations", function(){
 			it("does not modify the input", function(){
 				expect(input).toEqual([5])
 			})
-			it("applies the callback to every element and writes them to the output", function(){
+			it("returns the sum of the elements", function(){
 				expect(result).toEqual(5)
 			})
 		})
@@ -32,7 +32,7 @@ describe("calculations", function(){
 			it("does not modify the input", function(){
 				expect(input).toEqual([300, 5, 2])
 			})
-			it("applies the callback to every element and writes them to the output", function(){
+			it("returns the sum of the elements", function(){
 				expect(result).toEqual(307)
 			})
 		})
@@ -43,7 +43,7 @@ describe("calculations", function(){
 			beforeEach(function(){
 				result = vector.product(5)
 			})
-			it("applies the callback to every element and writes them to the output", function(){
+			it("returns the product of the elements", function(){
 				expect(result).toEqual(5)
 			})
 		})
@@ -56,7 +56,7 @@ describe("calculations", function(){
 			it("does not modify the input", function(){
 				expect(input).toEqual([5])
 			})
-			it("applies the callback to every element and writes them to the output", function(){
+			it("returns the product of the elements", function(){
 				expect(result).toEqual(5)
 			})
 		})
@@ -69,7 +69,7 @@ describe("calculations", function(){
 			it("does not modify the input", function(){
 				expect(input).toEqual([300, 5, 2])
 			})
-			it("applies the callback to every element and writes them to the output", function(){
+			it("returns the product of the elements", function(){
 				expect(result).toEqual(3000)
 			})
 		})
