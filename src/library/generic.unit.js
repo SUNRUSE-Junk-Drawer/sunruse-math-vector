@@ -230,36 +230,36 @@ describe("generic set operations", function(){
 		describe("scalar", function(){
 			var result
 			beforeEach(function(){
-				result = vector.fold(5, function(a, b){ return a * b + 1 })
+				result = vector.fold("scalar", function(a, b){ return "folded(" + a + ", " + b + ")" })
 			})
 			it("applies the callback to every element and writes them to the output", function(){
-				expect(result).toEqual(5)
+				expect(result).toEqual("scalar")
 			})
 		})
 		describe("vector with a single element", function(){
 			var input, result
 			beforeEach(function(){
-				input = [5]
-				result = vector.fold(input, function(a, b){ return a / b })
+				input = ["item a"]
+				result = vector.fold(input, function(a, b){ return "folded(" + a + ", " + b + ")" })
 			})
 			it("does not modify the input", function(){
-				expect(input).toEqual([5])
+				expect(input).toEqual(["item a"])
 			})
 			it("applies the callback to every element and writes them to the output", function(){
-				expect(result).toEqual(5)
+				expect(result).toEqual("item a")
 			})
 		})
 		describe("vector with multiple elements", function(){
 			var input, result
 			beforeEach(function(){
-				input = [300, 5, 2]
-				result = vector.fold(input, function(a, b){ return a / b })
+				input = ["item a", "item b", "item c"]
+				result = vector.fold(input, function(a, b){ return "folded(" + a + ", " + b + ")" })
 			})
 			it("does not modify the input", function(){
-				expect(input).toEqual([300, 5, 2])
+				expect(input).toEqual(["item a", "item b", "item c"])
 			})
 			it("applies the callback to every element and writes them to the output", function(){
-				expect(result).toEqual(30)
+				expect(result).toEqual("folded(folded(item a, item b), item c)")
 			})
 		})
 	})
