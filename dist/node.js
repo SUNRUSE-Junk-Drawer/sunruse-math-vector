@@ -1,6 +1,14 @@
 var instance = {}
 
 
+instance.sum = function(input) {
+	return instance.fold(input, function(a, b) { return a + b })
+}
+
+instance.product = function(input) {
+	return instance.fold(input, function(a, b) { return a * b })
+}
+
 instance.map = function(input, output, callback) {
 	if(input instanceof Array) {
 		for(var i = 0; i < input.length; i++) {
