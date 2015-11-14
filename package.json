@@ -1,0 +1,34 @@
+{
+  "name": "sunruse-math-vector",
+  "version": "0.0.0",
+  "description": "A simple, dependency-free JavaScript library for performing vector mathematics with anonymous type vectors of any length.",
+  "main": "dist/node.min.js",
+  "files": ["dist/node.min.js"],
+  "scripts": {
+	"prepublish": "grunt build test",
+    "test": "grunt build test"
+  },
+  "keywords": [
+    "vector",
+    "vectors",
+    "math",
+    "maths",
+    "mathematics"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/SUNRUSE/sunruse-math-vector.git"
+  },
+  "author": "SUNRUSE",
+  "license": "MIT",
+  "devDependencies": {
+    "grunt": "^0.4.5",
+    "grunt-cli": "^0.1.13",
+    "grunt-contrib-clean": "^0.7.0",
+    "grunt-contrib-concat": "^0.5.1",
+    "grunt-contrib-copy": "^0.8.2",
+    "grunt-contrib-uglify": "^0.10.1",
+    "grunt-contrib-watch": "^0.6.1",
+    "grunt-jasmine-nodejs": "^1.4.3"
+  }
+}

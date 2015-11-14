@@ -1,0 +1,78 @@
+<html>
+	<script src="browser.min.js"></script>
+	<script>
+		window.addEventListener("load", function() {
+			var tests = {
+				genericSetOperations: {
+					map: {
+						output: [],
+						inputA: [4, 8, 2],
+						callbackA: function(item) { return item * 2 + 1 }
+					},
+					fold: {
+						inputA: [4, 8, 2],
+						callbackA: function(a, b) { return a * b + 1 }
+					},
+					zip: {
+						inputA: [4, 8, 2],
+						inputB: [7, 14, 37],
+						callbackA: function(a, b) { return a * b + 1 },
+						output: []
+					},
+					zipFold: {
+						inputA: [80, 2, 32],
+						inputB: [160, 4, 8],
+						callbackA: function(a, b) { return a + b },
+						callbackB: function(a, b) { return a * b }
+					}
+				}
+			}
+
+			var categories = document.createElement("ul")
+
+			for(var category in tests) {
+				var catEl = document.createElement("li")
+				catEl.appendChild(document.createTextNode(category))
+
+				var testsEl = document.createElement("ul")
+				for(var test in tests[category]) {
+					var testEl = document.createElement("li")
+					testEl.appendChild(document.createTextNode(test + ": "))
+					
+					var testObj = tests[category][test]
+
+					var argsEl = document.createElement("ul")
+
+					var args = [], argStrings = []
+					var argsToApply = ["inputA", "inputB", "output", "callbackA", "callbackB"]
+					for(var i = 0; i < argsToApply.length; i++) {
+						var arg = testObj[argsToApply[i]]
+						if(!arg) continue
+						args.push(arg)
+						if(argsToApply[i] != "output") {
+							var argEl = document.createElement("li")
+							argEl.appendChild(document.createTextNode(argsToApply[i] + ": " + arg.toString()))
+							argsEl.appendChild(argEl)
+						}
+					}
+					testObj.result = SUNRUSE.math.vector[test].apply(null, args)
+
+					var argEl = document.createElement("li")
+					argEl.appendChild(document.createTextNode("Result: " + (testObj.result || testObj.output).toString()))
+					argsEl.appendChild(argEl)
+					testEl.appendChild(argsEl)
+
+					testsEl.appendChild(testEl)
+				}
+
+				catEl.appendChild(testsEl)
+
+				categories.appendChild(catEl)
+			}
+
+			document.body.appendChild(categories)
+		})
+	</script>
+	<body>
+	</body>
+</html>
