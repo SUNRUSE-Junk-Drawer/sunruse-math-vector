@@ -110,4 +110,73 @@ describe("unary", function(){
 			})
 		})
 	})
+	describe("normalize", function(){
+		describe("empty vector as output", function(){
+			var input, output
+			beforeEach(function(){
+				input = [8, 3, -9]
+				output = []
+				vector.normalize(input, output)
+			})
+			it("does not modify the input", function(){
+				expect(input).toEqual([8, 3, -9])
+			})
+			it("copies every element to the output, normalized", function(){
+				expect(output.length).toEqual(3)
+				expect(output[0]).toBeCloseTo(0.644658)
+				expect(output[1]).toBeCloseTo(0.241747)
+				expect(output[2]).toBeCloseTo(-0.725241)
+			})
+		})
+		describe("populated vector as output", function(){
+			var input, output
+			beforeEach(function(){
+				input = [8, 3, -9]
+				output = [20, -14, 8]
+				vector.normalize(input, output)
+			})
+			it("does not modify the input", function(){
+				expect(input).toEqual([8, 3, -9])
+			})
+			it("copies every element to the output, normalized", function(){
+				expect(output.length).toEqual(3)
+				expect(output[0]).toBeCloseTo(0.644658)
+				expect(output[1]).toBeCloseTo(0.241747)
+				expect(output[2]).toBeCloseTo(-0.725241)
+			})
+		})
+		describe("input as output", function(){
+			var output
+			beforeEach(function(){
+				output = [8, 3, -9]
+				vector.normalize(output, output)
+			})
+			it("does not modify the input, normalized", function(){
+				expect(output.length).toEqual(3)
+				expect(output[0]).toBeCloseTo(0.644658)
+				expect(output[1]).toBeCloseTo(0.241747)
+				expect(output[2]).toBeCloseTo(-0.725241)
+			})
+		})
+		describe("positive scalar", function(){
+			var output
+			beforeEach(function(){
+				output = []
+				vector.normalize(5, output)
+			})
+			it("copies every element to the output, normalized", function(){
+				expect(output).toEqual([1])
+			})
+		})
+		describe("negative scalar", function(){
+			var output
+			beforeEach(function(){
+				output = []
+				vector.normalize(-5, output)
+			})
+			it("copies every element to the output, normalized", function(){
+				expect(output).toEqual([-1])
+			})
+		})
+	})
 })

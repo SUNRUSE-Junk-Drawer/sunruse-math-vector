@@ -186,6 +186,16 @@ Given:
 
 Negates and writes each element in the input vector or scalar to the output vector.
 
+### normalize
+
+Given:
+
+* An input vector or scalar
+* An output vector
+
+Writes the normalized, or unit form of the input vector or scalar to the output vector.
+This could be described as a vector with a length of 1 pointing in the same direction as the input vector or scalar.
+
 ## Binary operations
 
 ### add
@@ -292,16 +302,6 @@ Given:
 Returns the distance between the input vectors or scalars.
 When vectors and scalars are mixed, the scalar is treated as a vector of the same length where each dimension has the scalar's value.
 Slower than *distanceSquared*.
-
-### normalize
-
-Given:
-
-* An input vector or scalar
-* An output vector
-
-Writes the normalized, or unit form of the input vector or scalar to the output vector.
-This could be described as a vector with a length of 1 pointing in the same direction as the input vector or scalar.
 
 # Undefined behaviour
 
