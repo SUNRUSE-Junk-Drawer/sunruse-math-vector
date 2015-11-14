@@ -196,10 +196,10 @@ describe("generic set operations", function(){
 				var output
 				beforeEach(function(){
 					output = ["existing a", "existing b", "existing c"]
-					vector.zip("item", output, output, function(a, b){ return "zipped(" + a + ", " + b + ")" })
+					vector.zip(output, "item", output, function(a, b){ return "zipped(" + a + ", " + b + ")" })
 				})
 				it("applies the callback to every element and writes them to the output", function(){
-					expect(output).toEqual(["zipped(item, existing a)", "zipped(item, existing b)", "zipped(item, existing c)"])
+					expect(output).toEqual(["zipped(existing a, item)", "zipped(existing b, item)", "zipped(existing c, item)"])
 				})
 			})
 		})
