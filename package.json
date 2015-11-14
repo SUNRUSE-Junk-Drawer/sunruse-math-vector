@@ -1,6 +1,6 @@
 {
   "name": "sunruse-math-vector",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "A simple, dependency-free JavaScript library for performing vector mathematics with anonymous type vectors of any length.",
   "main": "dist/node.min.js",
   "files": ["dist/node.min.js"],
