@@ -252,10 +252,10 @@ Writes the cross product of the input vectors or scalars to the output vector.
 Given:
 
 * An input vector or scalar representing the vector to reflect
-* An input vector or scalar representing the normal of the surface to reflect against
+* An input vector representing the normal of the surface to reflect against
 * An output vector
 
-Writes the reflection of the first input vector or scalar against the normal specified in the second input vector or scalar to the output vector.
+Writes the reflection of the first input vector or scalar against the normal specified in the second input vector to the output vector.
 
 ## Magnitude-based
 
